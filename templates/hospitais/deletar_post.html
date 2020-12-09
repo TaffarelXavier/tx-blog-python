@@ -1,0 +1,9 @@
+{% block content %}
+<h1>Deseja excluir {{post.nome_hospital}}?</h1>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Excluir</button>
+</form>
+
+<a href="{% url 'jornal' %}">Voltar</a>
+{% endblock content %}

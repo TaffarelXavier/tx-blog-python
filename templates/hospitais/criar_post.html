@@ -1,0 +1,12 @@
+{% extends 'hospitais/base.html' %} {% block content %}
+<div>
+  {% for msg in messages %}
+  <div class="alert {{msg.tgas}}">{{msg}}</div>
+  {% endfor %}
+  <form action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%} {{form.as_p}}
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+{% endblock content %}
