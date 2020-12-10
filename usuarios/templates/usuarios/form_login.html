@@ -1,4 +1,6 @@
+{% extends 'hospitais/base.html' %} {% block content %}
 <form method="post">
   {{form}} {% csrf_token %}
   <button type="submit">Logar</button>
 </form>
+{% endblock content %}

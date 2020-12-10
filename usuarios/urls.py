@@ -9,5 +9,5 @@ urlpatterns = [
         name='login'),
     path('logout/', auth_views.LogoutView.as_view(),
          name='logout'),
-    path('criar_usuario/', criar_usuario, name='criar_usuario'),
+    path('cadastre-se/', criar_usuario, name='cadastre_se'),
 ]

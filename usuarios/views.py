@@ -12,4 +12,4 @@ def criar_usuario(request):
             obj = form.save()
             obj.save()
             return redirect('login')
-    return render(request, 'usuarios/form_usuarios.html', {'form': form})
+    return render(request, 'usuarios/cadastre-se.html', {'form': form})
