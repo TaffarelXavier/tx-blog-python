@@ -127,8 +127,8 @@ MEDIA_URL = '/img/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img')
 
-LOGIN_REDIRECT_URL = 'blog'
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'login'
-LOGIN_URL = 'blog'
+LOGIN_URL = '/'
 
 django_heroku.settings(locals())
