@@ -13,8 +13,8 @@
         <span class="feed-post-datetime">Há 4 minutoss</span>
       </div>
       {% if user.is_authenticated %}
-      <a href="{% url 'editar' post.id %}">Editar</a> &nbsp;
-      <a href="{% url 'deletar' post.id %}">Deletar</a>
+      <a href="{% url 'editar' post.id %}"><span class="material-icons" style="font-size:18px;">edit</span></a> &nbsp;
+      <a href="{% url 'deletar' post.id %}"><span class="material-icons" style="font-size:18px;">delete</span></a>
       {% endif %}
     </div>
     {% endfor %}

@@ -1,30 +1,35 @@
 <section class="noticias main">
   <div>
-    <h1>Eleições 2020</h1>
+    <h1>{{telainicial.0.titulo_cabebalho}}</h1>
     <div class="caixa">
-      <span class="noticia-titulo">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, harum.
-      </span>
-      <span class="subtitulo"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi cumque
-        voluptatum tenetur voluptatibus culpa? Dolorem, ab. Alias, sint beatae
-        tempore ipsum quo numquam aliquid dolorum reiciendis id, nihil delectus
-        enim.</span
-      >
+      <span class="noticia-titulo"> {{telainicial.0.titulo}} </span>
+      <span class="subtitulo">{{telainicial.0.descricao}}</span>
     </div>
   </div>
   <div class="container">
     <div class="box">
-      <div class="inner-box">
-        <h2>TITLE 1 CENTRED</h2>
-        <p>SOME CENTRED TEXT</p>
+      <div
+        class="inner-box"
+        style="
+          background: url(../img/placeholder-grande.png) no-repeat;
+          background-size: 100% 100%;
+        "
+      >
+        <h2>{{telainicial.0.box_1_titulo}}</h2>
+        <p>{{telainicial.0.box_1_descricao}}</p>
       </div>
     </div>
     <hr class="divider" />
     <div class="box">
-      <div class="inner-box">
-        <h2>TITLE 2 CENTRED</h2>
-        <p>SOME CENTRED TEXT</p>
+      <div
+        class="inner-box"
+        style="
+          background: url(../img/placeholder-grande.png) no-repeat;
+          background-size: 100% 100%;
+        "
+      >
+        <h2>{{telainicial.0.box_2_titulo}}</h2>
+        <p>{{telainicial.0.box_2_descricao}}</p>
       </div>
     </div>
   </div>

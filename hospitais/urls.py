@@ -24,12 +24,12 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', TemplateView.as_view(template_name='hospitais/index.html'),name='index'),
+    url(r'^$', TemplateView.as_view(template_name='hospitais/index.html')),
     path('blog/', index, name="blog"),
     path('hospitais/', posts),
     path('criar_post/', criar_post, name="criar_post"),
-    path('editar/<int:id>', editar_post, name='editar'),
-    path('deletar/<int:id>', deletar_post, name='deletar'),
+    path('editar/<int:id>', editar_post, name="editar"),
+    path('deletar/<int:id>', deletar_post, name="deletar"),
     path('', include('usuarios.urls')),
     url(r'^img/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]

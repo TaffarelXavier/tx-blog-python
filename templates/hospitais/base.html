@@ -43,6 +43,7 @@
           <a href="{% url 'cadastre_se' %}">CADASTRE-SE</a>
           <a href="{% url 'login' %}">ENTRAR</a>
           {% else %} 
+          <a href="{% url 'admin:index' %}">PAINEL ADMINISTRATIVO</a>
           <a href="{% url 'criar_post' %}">CRIAR POSTAGEM</a>
           {{ user.username|upper }} está logado.
           <a href="{% url 'logout' %}">SAIR</a>
@@ -98,7 +99,7 @@
         </div>
       </section>
       {% include "hospitais/noticia_principal.html" %}
-      {% block content%} {% endblock content %}
+      {% block content %} {% endblock content %}
     </main>
 
     <footer class="footer">

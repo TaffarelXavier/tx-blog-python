@@ -1,15 +1,24 @@
+{% extends 'hospitais/base.html' %} {% block content %}
 <div>
+  <h1>Editar postagem</h1>
+  <hr />
   <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="fieldWrapper">
       {{ form.nome_hospital.errors }}
-      <label for="{{ form.nome_hospital.id_for_label }}">Nome hospital:</label>
+      <label for="{{ form.nome_hospital.id_for_label }}">Título:</label> <br />
       {{ form.nome_hospital }}
     </div>
 
+    <div class="fieldWrapper">
+      {{ form.desc_hospital.errors }}
+      <label for="{{ form.nome_hospital.id_desc_hospital }}">Descrição:</label><br />
+      {{ form.desc_hospital }}
+    </div>
+
     <figure>
-        <img src="{{post.foto_url}}" alt="" srcset="">
+      <img src="{{post.foto_url}}" class="image" alt="" srcset="" />
     </figure>
     <div class="fieldWrapper">
       {{ form.foto.errors }}
@@ -17,26 +26,7 @@
       {{ form.foto }}
     </div>
 
-    <div class="fieldWrapper">
-      {{ form.desc_hospital.errors }}
-      <label for="{{ form.nome_hospital.id_desc_hospital }}"
-        >Desc hospital:</label
-      >
-      {{ form.desc_hospital }}
-    </div>
-
-    <p>
-      <label for="id_desc_hospital"></label>
-      <input
-        type="text"
-        name="desc_hospital"
-        value="asdfsd"
-        class="myfieldclass"
-        maxlength="200"
-        required=""
-        id="id_desc_hospital"
-      />
-    </p>
+    {% comment %}
     <p>
       <label for="id_tipo_hospital">Tipo hospital:</label>
       <input
@@ -48,6 +38,7 @@
         id="id_tipo_hospital"
       />
     </p>
+    {% endcomment %} {% comment %}
     <p>
       <label for="id_conceito_hospital">Conceito hospital:</label>
       <input
@@ -59,7 +50,10 @@
         id="id_conceito_hospital"
       />
     </p>
-    <button type="submit">Enviar</button>
+    {% endcomment %}
+    <hr />
+    <button class="btn btn-danger" type="submit">Enviar</button>
   </form>
   <a href="{% url 'blog' %}">Voltar</a>
 </div>
+{% endblock content %}
