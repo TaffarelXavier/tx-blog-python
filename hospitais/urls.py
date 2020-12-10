@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='hospitais/index.html'),name='index'),
     path('blog/', index, name="blog"),
     path('hospitais/', posts),
-    path('criar_post/', criar_post),
+    path('criar_post/', criar_post, name="criar_post"),
     path('editar/<int:id>', editar_post, name='editar'),
     path('deletar/<int:id>', deletar_post, name='deletar'),
     path('', include('usuarios.urls')),
