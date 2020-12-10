@@ -19,14 +19,13 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from django.views.static import serve
 from django.conf import settings
-from hospitalapp.views import index, posts, criar_post, editar_post, deletar_post
+from hospitalapp.views import index, criar_post, editar_post, deletar_post
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='hospitais/index.html')),
     path('blog/', index, name="blog"),
-    path('hospitais/', posts),
     path('criar_post/', criar_post, name="criar_post"),
     path('editar/<int:id>', editar_post, name="editar"),
     path('deletar/<int:id>', deletar_post, name="deletar"),

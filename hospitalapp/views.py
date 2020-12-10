@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
-from .forms import Hospitalform
+from .forms import PostsForm, Hospitalform
 from .models import Post, TelaInicial
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
@@ -18,23 +18,23 @@ def index(request):
     return render(request, 'hospitais/index.html', {'hospitais': posts, 'telainicial': tela_inicial})
 
 
-def posts(request):
-    posts = Post.objects.all()
-    busca = request.GET.get('search')
-    if busca:
-        posts = Post.objects.filter(titulo__icontains=busca)
-    return render(request, "hospitais/jornal.html", {'hospitais': posts})
+# def posts(request):
+#     posts = Post.objects.all()
+#     busca = request.GET.get('search')
+#     if busca:
+#         posts = Post.objects.filter(titulo__icontains=busca)
+#     return render(request, "hospitais/jornal.html", {'hospitais': posts})
 
 
 def criar_post(request):
-    form = Hospitalform(request.POST)
+    form = PostsForm(request.POST)
     if request.method == "POST":
-        form = Hospitalform(request.POST, request.FILES)
+        form = PostsForm(request.POST, request.FILES)
     if form.is_valid():
-        hosp = form.save()
-        hosp.save()
+        post = form.save()
+        post.save()
         messages.success(request, 'Post criado com sucesso.')
-        form = Hospitalform()
+        form = PostsForm()
 
     return render(request, 'posts/criar_post.html', {'form': form})
 
