@@ -15,7 +15,7 @@ def index(request):
     busca = request.GET.get('search')
     if busca:
         posts = Post.objects.filter(titulo__icontains=busca)
-    return render(request, 'hospitais/index.html', {'hospitais': posts, 'telainicial': tela_inicial})
+    return render(request, 'hospitais/index.html', {'posts': posts, 'telainicial': tela_inicial})
 
 
 # def posts(request):
@@ -28,6 +28,8 @@ def index(request):
 
 def criar_post(request):
     form = PostsForm(request.POST)
+    posts = Post.objects.all()
+    tela_inicial = TelaInicial.objects.all()
     if request.method == "POST":
         form = PostsForm(request.POST, request.FILES)
     if form.is_valid():
@@ -36,7 +38,7 @@ def criar_post(request):
         messages.success(request, 'Post criado com sucesso.')
         form = PostsForm()
 
-    return render(request, 'posts/criar_post.html', {'form': form})
+    return render(request, 'posts/criar_post.html', {'form': form, 'posts': posts, 'telainicial': tela_inicial})
 
 
 def editar_post(request, id):

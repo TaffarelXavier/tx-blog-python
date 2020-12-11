@@ -1,4 +1,6 @@
-{% extends 'hospitais/base.html' %} {% block content %}
+{% extends 'hospitais/base.html' %}
+{% block content %}
+{% include 'hospitais/noticias_cards.html' %}
 <div>
   {% for msg in messages %}
   <div class="alert {{msg.tgas}}">{{msg}}</div>

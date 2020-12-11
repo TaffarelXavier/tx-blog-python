@@ -1,8 +1,54 @@
-{% extends 'hospitais/base.html' %}
-{% block content %}
-<form method="POST">
-  {% csrf_token %}
-{{form}}
-  <button type="submit">Salvar</button>
-</form>
-{% endblock content %}
+{% extends 'hospitais/base.html' %} {% block content %}
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" id="form-cadastre-se">
+          {% csrf_token %} {{form}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Fechar
+        </button>
+        <button type="submit" class="btn btn-primary" form="form-cadastre-se">
+          Salvar Alterações
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var exampleModal = document.getElementById('exampleModal');
+  exampleModal.show();
+  exampleModal.addEventListener('show.bs.modal', function (event) {
+
+  });
+</script>
+{% include 'hospitais/noticias_cards.html' %} {% endblock content %}
